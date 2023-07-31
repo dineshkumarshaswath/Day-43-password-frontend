@@ -4,6 +4,7 @@ import { Switch ,Route} from 'react-router-dom'
 import Login from './Components/login'
 import Signup from './Components/signup'
 import Forgotpassword from './Components/forgotpass';
+import Resetpassword from './Components/resetpass';
 
 function App() {
  
@@ -20,6 +21,10 @@ function App() {
       <Route path="/forgot">
         <Forgotpassword/>
 
+      </Route>
+
+      <Route path="/reset/password/:token">
+        <Resetpassword/>
       </Route>
     </Switch>
      
