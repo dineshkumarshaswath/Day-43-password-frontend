@@ -1,0 +1,14 @@
+*{
+    font-family:"roboto";
+  
+    
+}
+
+
+body{
+    background:linear-gradient(
+        to bottom right,#403F44,#1E1B32
+    );
+
+    color:white
+}

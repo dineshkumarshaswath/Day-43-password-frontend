@@ -58,7 +58,7 @@ function Login() {
         if (data.token) {
 
             localStorage.setItem("token", data.token)
-            history.push("/students")
+            history.push("/home")
 
         }
         else {
@@ -71,65 +71,67 @@ function Login() {
 
     return (
         <>
-          
 
 
-                <Row sm={1} md={1} lg={1} xl={1}
-                    style={{ textAlign: "center" }}>
 
-                    <Form onSubmit={handleSubmit}
-                        style={{ display: "grid", placeItems: "center", marginTop: "50px", }}
-                    >
+            <Row sm={1} md={1} lg={1} xl={1}
+                style={{ textAlign: "center" }}>
 
-                        <Col style={{ textAlign: "center", width: '30%', margin: "5px" }}  >
-                            <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label style={{ display: "flex", alignItmes: "start" }}>Email</Form.Label>
-                                <Form.Control style={{ textAlign: "center", borderRadius: "20px" }}
-                                    type="email"
-                                    placeholder="Example:johndue@gmail.com"
-                                    value={values.email}
-                                    name='email'
-                                    onBlur={handleBlur}
-                                    onChange={handleChange} /> </Form.Group></Col>
+                <Form onSubmit={handleSubmit}
+                    style={{ display: "grid", placeItems: "center", marginTop: "50px", }}
+                >
 
-                        <Col style={{ color: 'crimson', textAlign: "center", width: '30%', margin: "5px" }}>
-                            {touched.email ? errors.email : ""}</Col>
+                    <Col style={{ textAlign: "center", width: '30%', margin: "5px" }}  >
+                        <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
+                            <Form.Label style={{ display: "flex", alignItmes: "start" }}>Email</Form.Label>
+                            <Form.Control style={{ textAlign: "center", borderRadius: "20px" }}
+                                type="email"
+                                placeholder="Example:johndue@gmail.com"
+                                value={values.email}
+                                name='email'
+                                onBlur={handleBlur}
+                                onChange={handleChange} /> </Form.Group></Col>
 
-                        <Col style={{ textAlign: "center", width: '30%', margin: "5px" }} variant="success" >
-                            <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label style={{ display: "flex", alignItmes: "start" }}>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Your Password"
-                                    style={{ textAlign: "center", borderRadius: "20px" }}
-                                    value={values.password}
-                                    name='password'
-                                    onBlur={handleBlur}
-                                    onChange={handleChange}
-                                /></Form.Group> </Col>
+                    <Col style={{ color: 'crimson', textAlign: "center", width: '30%', margin: "5px" }}>
+                        {touched.email ? errors.email : ""}</Col>
 
-                        <Col style={{ color: 'crimson', textAlign: "center", width: '30%', margin: "5px" }}>
-                            {touched.password ? errors.password : ""}</Col>
+                    <Col><a href="/forgot" style={{ textDecoration: 'none' }}>forgotpassword?</a></Col>
 
+                    <Col style={{ textAlign: "center", width: '30%', margin: "5px" }} variant="success" >
+                        <Form.Group className="mb-1" controlId="exampleForm.ControlTextarea1">
+                            <Form.Label style={{ display: "flex", alignItmes: "start" }}>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Your Password"
+                                style={{ textAlign: "center", borderRadius: "20px" }}
+                                value={values.password}
+                                name='password'
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                            /></Form.Group> </Col>
 
-                        <Col style={{ margin: "5px" }}><Button type='submit'>Login</Button>
-                        </Col>
-
-
-                        {error ? <Col style={{ textAlign: "center", width: '30%', margin: "5px" }}
-                        ><Form.Control style={{
-                            Color: "crimson"
-                            , fontWeight: "bold", textAlign: "center"
-                        }}
-                            placeHolder={error} /></Col> : " "}
+                    <Col style={{ color: 'crimson', textAlign: "center", width: '30%', margin: "5px" }}>
+                        {touched.password ? errors.password : ""}</Col>
 
 
-                    </Form>
-
-                    <Col >Don't have account?<a href='/signup' >Sign in</a>
-
+                    <Col style={{ margin: "5px" }}><Button type='submit'>Login</Button>
                     </Col>
-                    L<Col><a href="/forgot">forgotpassword</a></Col>
-                </Row>
-           
+
+
+                    {error ? <Col style={{ textAlign: "center", width: '30%', margin: "5px" }}
+                    ><Form.Control style={{
+                        Color: "crimson"
+                        , fontWeight: "bold", textAlign: "center"
+                    }}
+                        placeHolder={error} /></Col> : " "}
+
+
+                </Form>
+
+                <Col >Don't have account?<a href='/signup' >Sign in</a>
+
+                </Col>
+
+            </Row>
+
         </>
     )
 }
